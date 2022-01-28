@@ -58,5 +58,6 @@ export function RandomnessChartComponent({ random, isPlayingInitially }: IRandom
 const RandomnessChartDiv = styled.div`
     background-color: rgba(0, 0, 0, 0.1);
     padding: 10px;
+    width: 150px;
     border-radius: 5px;
 `;
