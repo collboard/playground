@@ -17,6 +17,10 @@ export class RandomnessChartArt extends Abstract2dBoxArt {
         license,
         repository,
         version,
+        flags: {
+            isDevelopment: true,
+            isExperimental: true,
+        },
     };
 
     public constructor(private readonly options: IRandomnessChartOptions) {

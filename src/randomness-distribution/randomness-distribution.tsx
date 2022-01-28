@@ -20,7 +20,7 @@ declareModule({
         categories: ['Basic', 'Art', 'Experimental'],
         flags: {
             isDevelopment: true,
-            isHidden: true,
+            isExperimental: true,
         },
     },
 
