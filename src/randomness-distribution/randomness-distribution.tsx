@@ -18,6 +18,7 @@ declareModule({
         repository,
         title: { en: 'Showcase of randomness' },
         categories: ['Basic', 'Art', 'Experimental'],
+        icon: '🎲',
         flags: {
             isDevelopment: true,
             isExperimental: true,
