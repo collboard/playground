@@ -1,8 +1,10 @@
 import { declareModule } from '@collboard/modules-sdk';
+import { Registration } from 'destroyable';
 import { Vector } from 'xyzt';
 import { contributors, description, license, repository, version } from '../../package.json';
 import { CompositeCyclicGenerator } from './generators/CompositeCyclicGenerator';
 import { Dice } from './generators/Dice';
+import { FakeDice } from './generators/FakeDice';
 import { RotateDice } from './generators/RotateDice';
 import { RandomnessChartArt } from './randomness-chart-art';
 
@@ -23,25 +25,53 @@ declareModule({
     },
 
     async setup(systems) {
-        const { virtualArtVersioningSystem } = await systems.request('virtualArtVersioningSystem');
-        return virtualArtVersioningSystem
-            .createPrimaryOperation()
-            .newArts(
-                new RandomnessChartArt({
-                    random: Dice({ sides: 6 }),
-                }).setShift(new Vector(-100, 0)),
+        const { materialArtVersioningSystem, artSerializer } = await systems.request(
+            'materialArtVersioningSystem',
+            'artSerializer',
+        );
 
-                new RandomnessChartArt({
-                    random: RotateDice({ sides: 6 }),
-                }).setShift(new Vector(100, 0)),
+        artSerializer.registerRule({
+            name: 'Dice',
+            class: Dice,
+        });
 
-                new RandomnessChartArt({
-                    random: CompositeCyclicGenerator({
-                        from: Dice({ sides: 5 }),
-                        sides: 7,
-                    }),
-                }).setShift(new Vector(300, 0)),
-            )
-            .persist();
+        artSerializer.registerRule({
+            name: 'RotateDice',
+            class: RotateDice,
+        });
+
+        artSerializer.registerRule({
+            name: 'CompositeCyclicGenerator',
+            class: CompositeCyclicGenerator,
+        });
+
+        artSerializer.registerRule({
+            name: 'FakeDice',
+            class: FakeDice,
+        });
+
+        if (!materialArtVersioningSystem.arts.some((art) => art instanceof RandomnessChartArt)) {
+            return materialArtVersioningSystem
+                .createPrimaryOperation()
+                .newArts(
+                    new RandomnessChartArt({
+                        random: Dice({ sides: 6 }),
+                    }).setShift(new Vector(-100, 0)),
+
+                    new RandomnessChartArt({
+                        random: RotateDice({ sides: 6 }),
+                    }).setShift(new Vector(100, 0)),
+
+                    new RandomnessChartArt({
+                        random: CompositeCyclicGenerator({
+                            from: Dice({ sides: 5 }),
+                            sides: 7,
+                        }),
+                    }).setShift(new Vector(300, 0)),
+                )
+                .persist();
+        }
+
+        return Registration.void();
     },
 });
