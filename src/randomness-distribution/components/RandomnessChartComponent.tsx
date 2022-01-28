@@ -25,7 +25,7 @@ export function RandomnessChartComponent({ random, isPlayingInitially }: IRandom
             },
             async waiter() {
                 await forTimeSynced(10);
-                //await forAnimationFrame();
+                // await forAnimationFrame();
             },
         });
 
@@ -47,7 +47,7 @@ export function RandomnessChartComponent({ random, isPlayingInitially }: IRandom
             {Object.entries(stats).map(([key, value]) => (
                 <div {...{ key }}>
                     <label>
-                        {parseInt(key) + 1} ({value})<progress {...{ max, value }}>{value}</progress>
+                        {parseInt(key, 10) + 1} ({value})<progress {...{ max, value }}>{value}</progress>
                     </label>
                 </div>
             ))}
