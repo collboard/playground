@@ -1,6 +1,6 @@
-import { React } from '@collboard/modules-sdk';
+import { React, styled } from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
-import { forAnimationFrame, forTimeSynced } from 'waitasecond';
+import { forTimeSynced } from 'waitasecond';
 import { IRandomnessChartOptions } from '../randomness-chart-art';
 
 export interface IRandomnessChartComponentProps extends IRandomnessChartOptions {
@@ -25,7 +25,7 @@ export function RandomnessChartComponent({ random, isPlayingInitially }: IRandom
             },
             async waiter() {
                 await forTimeSynced(10);
-                await forAnimationFrame();
+                //await forAnimationFrame();
             },
         });
 
@@ -37,7 +37,7 @@ export function RandomnessChartComponent({ random, isPlayingInitially }: IRandom
     const total = Object.values(stats).reduce((a, b) => a + b, 0);
     const max = Math.max(...Object.values(stats));
     return (
-        <>
+        <RandomnessChartDiv>
             <button {...{ onClick: () => setPlaying(!isPlaying) }}>{isPlaying ? `⏸` : `⏵`}</button>
 
             <div>
@@ -51,6 +51,12 @@ export function RandomnessChartComponent({ random, isPlayingInitially }: IRandom
                     </label>
                 </div>
             ))}
-        </>
+        </RandomnessChartDiv>
     );
 }
+
+const RandomnessChartDiv = styled.div`
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+`;
