@@ -16,11 +16,11 @@ declareModule({
         contributors,
         license,
         repository,
-        title: { en: 'Drawing of dotted and dashed lines', cs: 'Kreslení přerušovaných čar' },
+        title: { en: 'Showcase of randomness' },
         categories: ['Basic', 'Art', 'Experimental'],
-        icon: '✒️',
         flags: {
-            isTemplate: true,
+            isDevelopment: true,
+            isHidden: true,
         },
     },
 
