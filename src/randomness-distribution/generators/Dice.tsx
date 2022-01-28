@@ -7,6 +7,6 @@ export interface IDiceOptions {
 
 export function* Dice({ sides }: IDiceOptions): IRandom {
     while (true) {
-        yield randomInteger(sides);
+        yield { sides, toss: randomInteger(sides) };
     }
 }

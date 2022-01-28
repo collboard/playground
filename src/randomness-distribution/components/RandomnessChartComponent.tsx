@@ -14,9 +14,12 @@ export function RandomnessChartComponent({ random, isPlayingInitially }: IRandom
         const loop = Registration.loop({
             async tick() {
                 if (isPlaying) {
-                    const value = random.next().value;
+                    const { sides, toss } = random.next().value;
                     const newStats = { ...stats };
-                    newStats[value] = (newStats[value] || 0) + 1;
+                    for (let side = 0; side < sides; side++) {
+                        newStats[side] = newStats[side] || 0;
+                    }
+                    newStats[toss]++;
                     setStats(newStats);
                 }
             },
@@ -31,13 +34,21 @@ export function RandomnessChartComponent({ random, isPlayingInitially }: IRandom
         };
     }, [isPlaying, stats, random]);
 
+    const total = Object.values(stats).reduce((a, b) => a + b, 0);
+    const max = Math.max(...Object.values(stats));
     return (
         <>
             <button {...{ onClick: () => setPlaying(!isPlaying) }}>{isPlaying ? `⏸` : `⏵`}</button>
 
+            <div>
+                <b>Total:</b> {total}
+            </div>
+
             {Object.entries(stats).map(([key, value]) => (
                 <div {...{ key }}>
-                    <b>{key}:</b> {value}
+                    <label>
+                        {parseInt(key) + 1} ({value})<progress {...{ max, value }}>{value}</progress>
+                    </label>
                 </div>
             ))}
         </>

@@ -1,1 +1,1 @@
-export type IRandom = IterableIterator<number>;
+export type IRandom = IterableIterator<{ sides: number; toss: number }>;

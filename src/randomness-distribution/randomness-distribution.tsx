@@ -1,9 +1,10 @@
 import { declareModule } from '@collboard/modules-sdk';
 import { Vector } from 'xyzt';
 import { contributors, description, license, repository, version } from '../../package.json';
+import { CompositeCyclicGenerator } from './generators/CompositeCyclicGenerator';
+import { Dice } from './generators/Dice';
+import { RotateDice } from './generators/RotateDice';
 import { RandomnessChartArt } from './randomness-chart-art';
-import { RotateDice } from "./generators/RotateDice";
-import { Dice } from "./generators/Dice";
 
 declareModule({
     manifest: {
@@ -33,6 +34,13 @@ declareModule({
                 new RandomnessChartArt({
                     random: RotateDice({ sides: 6 }),
                 }).setShift(new Vector(100, 0)),
+
+                new RandomnessChartArt({
+                    random: CompositeCyclicGenerator({
+                        from: Dice({ sides: 5 }),
+                        sides: 7,
+                    }),
+                }).setShift(new Vector(300, 0)),
             )
             .persist();
     },

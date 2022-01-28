@@ -1,8 +1,6 @@
 import { IRandom } from '../interfaces/IRandom';
-import { randomInteger } from '../utils/randomInteger';
+import { Dice } from './Dice';
 
-function* Coin(): IRandom {
-    while (true) {
-        yield randomInteger(2);
-    }
+function Coin(): IRandom {
+    return Dice({ sides: 2 });
 }

@@ -7,6 +7,6 @@ interface IFakeDiceOptions extends IDiceOptions {
 
 export function* FakeDice({ sides, fakedValue }: IFakeDiceOptions): IRandom {
     while (true) {
-        yield fakedValue;
+        yield { sides, toss: fakedValue };
     }
 }
