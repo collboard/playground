@@ -5,9 +5,8 @@ Playground for miscellaneous ideas from which we can create full production modu
 <!--Badges-->
 
  [![License](https://img.shields.io/github/license/collboard/playground.svg?style=flat)](https://raw.githubusercontent.com/collboard/playground/master/LICENSE)
- [![NPM Version](https://badge.fury.io/js/@collboard%2Fplayground.svg)](https://www.npmjs.com/package/@collboard/playground)
- [![undefined](https://github.com/collboard/playground/actions/workflows/lint/badge.svg)](https://github.com/collboard/playground/actions/workflows/lint.yml)
- [![undefined](https://github.com/collboard/playground/actions/workflows/test/badge.svg)](https://github.com/collboard/playground/actions/workflows/test.yml)
+ [![lint](https://github.com/collboard/playground/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/playground/actions/workflows/lint.yml)
+ [![test](https://github.com/collboard/playground/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/playground/actions/workflows/test.yml)
  [![Known Vulnerabilities](https://snyk.io/test/github/collboard/playground/badge.svg)](https://snyk.io/test/github/collboard/playground)
  [![Issues](https://img.shields.io/github/issues/collboard/playground.svg?style=flat)](https://github.com/collboard/playground/issues)
 
