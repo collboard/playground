@@ -4,12 +4,13 @@ Playground for miscellaneous ideas from which we can create full production modu
 
 <!--Badges-->
 
-[![License](https://img.shields.io/github/license/collboard/art-tool-attribute-module.svg?style=flat)](https://raw.githubusercontent.com/collboard/art-tool-attribute-module/master/LICENSE)
-[![Test](https://github.com/collboard/art-tool-attribute-module/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/art-tool-attribute-module/actions/workflows/test.yml)
-[![Lint](https://github.com/collboard/art-tool-attribute-module/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/art-tool-attribute-module/actions/workflows/lint.yml)
-[![Known Vulnerabilities](https://snyk.io/test/github/collboard/art-tool-attribute-module/badge.svg)](https://snyk.io/test/github/collboard/art-tool-attribute-module)
-[![Issues](https://img.shields.io/github/issues/collboard/art-tool-attribute-module.svg?style=flat)](https://github.com/collboard/art-tool-attribute-module/issues)
+ [![License](https://img.shields.io/github/license/collboard/playground.svg?style=flat)](https://raw.githubusercontent.com/collboard/playground/master/LICENSE)
+ [![NPM Version](https://badge.fury.io/js/@collboard%2Fplayground.svg)](https://www.npmjs.com/package/@collboard/playground)
+ [![undefined](https://github.com/collboard/playground/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/playground/actions/workflows/lint.yml.yml)
+ [![undefined](https://github.com/collboard/playground/actions/workflows/publish.yml/badge.svg)](https://github.com/collboard/playground/actions/workflows/publish.yml.yml)
+ [![undefined](https://github.com/collboard/playground/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/playground/actions/workflows/test.yml.yml)
+ [![Known Vulnerabilities](https://snyk.io/test/github/collboard/playground/badge.svg)](https://snyk.io/test/github/collboard/playground)
+ [![Issues](https://img.shields.io/github/issues/collboard/playground.svg?style=flat)](https://github.com/collboard/playground/issues)
 
-<!--TODO: Make badge from module store with published version + maybe some stats like count of installations etc.-->
 <!--/Badges-->
 
