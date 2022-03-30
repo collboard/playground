@@ -1,6 +1,6 @@
 {
     "name": "@collboard/playground",
-    "version": "0.3.10",
+    "version": "0.3.11",
     "description": "Playground for miscellaneous ideas from which we can create full production modules for Collboard.com created via @collboard/modules-sdk.",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
