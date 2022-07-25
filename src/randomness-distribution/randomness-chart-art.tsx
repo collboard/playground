@@ -1,4 +1,4 @@
-import { Abstract2dBoxArt, declareModule, ISystemsExtended, makeArtModule, React } from '@collboard/modules-sdk';
+import { Abstract2dBoxArt, declareModule, makeArtModule, React } from '@collboard/modules-sdk';
 import { contributors, description, license, repository, version } from '../../package.json';
 import { RandomnessChartComponent } from './components/RandomnessChartComponent';
 import { IRandom } from './interfaces/IRandom';
@@ -27,7 +27,7 @@ export class RandomnessChartArt extends Abstract2dBoxArt {
         super();
     }
 
-    public renderBox(systems: ISystemsExtended): JSX.Element {
+    public renderBox(): JSX.Element {
         return <RandomnessChartComponent isPlayingInitially={true} {...this.options} />;
     }
 }
