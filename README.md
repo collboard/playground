@@ -15,9 +15,9 @@ Playground for miscellaneous ideas from which we can create full production modu
 
 [![License of 💡 Collboard playground](https://img.shields.io/github/license/collboard/playground.svg?style=flat)](https://github.com/collboard/playground/blob/main/LICENSE)
 [![lint](https://github.com/collboard/playground/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/playground/actions/workflows/lint.yml)
+[![test](https://github.com/collboard/playground/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/playground/actions/workflows/test.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/collboard/playground/badge.svg)](https://snyk.io/test/github/collboard/playground)
 [![Issues](https://img.shields.io/github/issues/collboard/playground.svg?style=flat)](https://github.com/collboard/playground/issues)
-<!--[![test](https://github.com/collboard/playground/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/playground/actions/workflows/test.yml)-->
 
 <!--/Badges-->
 
